@@ -1,5 +1,7 @@
 package Plataforma_Educativa.controller;
 
+import Plataforma_Educativa.model.dto.CursoDTO;
+import Plataforma_Educativa.model.entity.Contenido;
 import Plataforma_Educativa.model.entity.Curso;
 import Plataforma_Educativa.service.CursoService;
 import lombok.RequiredArgsConstructor;
@@ -9,36 +11,37 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cursos")
-@RequiredArgsConstructor
 public class CursoController {
 
     private final CursoService cursoService;
 
-    @PostMapping("/{docenteID}")
-    public ResponseEntity<Curso> crearCurso(@PathVariable int docenteID, @RequestBody Curso curso) {
-        return ResponseEntity.ok(cursoService.crearCurso(docenteID, curso));
+    public CursoController(CursoService cursoService) {
+        this.cursoService = cursoService;
     }
 
-    @PostMapping("/{cursoID}/estudiantes/{estudianteID}")
-    public ResponseEntity<String> asignarEstudiante(@PathVariable int cursoID, @PathVariable int estudianteID) {
-        cursoService.asignarEstudiante(cursoID, estudianteID);
-        return ResponseEntity.ok("Estudiante asignado al curso correctamente.");
+    @PostMapping("/")
+    public ResponseEntity<Curso> crearCurso(@RequestBody CursoDTO cursoDTO) {
+        return ResponseEntity.ok(cursoService.crearCurso(cursoDTO));
+    }
+
+    @PutMapping("/{cursoID}")
+    public ResponseEntity<Curso> editarCurso(@PathVariable Long cursoID, @RequestBody Curso curso) {
+        return ResponseEntity.ok(cursoService.editarCurso(cursoID, curso));
     }
 
     @DeleteMapping("/{cursoID}")
-    public ResponseEntity<String> eliminarCurso(@PathVariable int cursoID) {
+    public ResponseEntity<String> eliminarCurso(@PathVariable Long cursoID) {
         cursoService.eliminarCurso(cursoID);
         return ResponseEntity.ok("Curso eliminado correctamente.");
     }
 
-    @GetMapping("/docente/{docenteID}")
-    public ResponseEntity<List<Curso>> obtenerCursosPorDocente(@PathVariable int docenteID) {
-        return ResponseEntity.ok(cursoService.obtenerCursosPorDocente(docenteID));
-    }
-
     @GetMapping("/{cursoID}")
-    public ResponseEntity<Curso> obtenerCursoPorID(@PathVariable int cursoID) {
+    public ResponseEntity<Curso> obtenerCursoPorID(@PathVariable Long cursoID) {
         return ResponseEntity.ok(cursoService.obtenerCursoPorID(cursoID));
     }
 
+    @PostMapping("/{cursoID}/contenido")
+    public ResponseEntity<Contenido> agregarContenido(@PathVariable Long cursoID, @RequestBody Contenido contenido) {
+        return ResponseEntity.ok(cursoService.agregarContenido(cursoID, contenido));
+    }
 }

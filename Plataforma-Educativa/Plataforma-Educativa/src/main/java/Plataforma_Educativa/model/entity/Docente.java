@@ -5,6 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
+@Entity
+@Table(name = "docentes") // Agregar nombre de la tabla para evitar problemas
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Docente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +18,13 @@ public class Docente {
 
     private String nombre;
     private String correo;
+    //@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(
+            name = "docente_curso",
+            joinColumns = @JoinColumn(name = "docente_id"),
+            inverseJoinColumns = @JoinColumn(name = "curso_id")
+    )
 
-    @OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
     private List<Curso> cursos;
 }

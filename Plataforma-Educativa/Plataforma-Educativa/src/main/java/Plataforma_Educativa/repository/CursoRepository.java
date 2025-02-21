@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Long> {
-    @Query("SELECT c FROM Curso c WHERE c.docente.id = :docenteId")
+    @Query("SELECT c FROM Curso c JOIN c.docentes d WHERE d.id = :docenteId")
     List<Curso> findByDocenteId(@Param("docenteId") Long docenteId);
     //ESTO NO LO MODIFICO QUE ME LO PASÓ CHATGPT
 }

@@ -20,10 +20,6 @@ public class Curso {
     private String nombre;
     private String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "docente_id", nullable = false)
-    private Docente docente;
-
     @ManyToMany
     @JoinTable(
             name = "curso_estudiante",
@@ -31,4 +27,6 @@ public class Curso {
             inverseJoinColumns = @JoinColumn(name = "estudiante_id")
     )
     private List<Estudiante> estudiantes;
+    @ManyToMany(mappedBy = "cursos")  // Esto debe coincidir con la relación en Docente.java
+    private List<Docente> docentes;
 }
