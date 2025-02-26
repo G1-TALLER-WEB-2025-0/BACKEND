@@ -5,10 +5,8 @@ import Plataforma_Educativa.model.entity.Contenido;
 import Plataforma_Educativa.model.entity.Curso;
 import Plataforma_Educativa.repository.ContenidoRepository;
 import Plataforma_Educativa.repository.CursoRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

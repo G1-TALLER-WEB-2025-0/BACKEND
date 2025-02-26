@@ -2,7 +2,6 @@ package Plataforma_Educativa.controller;
 
 import Plataforma_Educativa.model.dto.ContenidoDTO;
 import Plataforma_Educativa.service.ContenidoService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

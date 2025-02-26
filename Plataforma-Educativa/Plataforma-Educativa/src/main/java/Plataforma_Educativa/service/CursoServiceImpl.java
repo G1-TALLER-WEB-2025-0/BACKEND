@@ -7,12 +7,9 @@ import Plataforma_Educativa.model.entity.Docente;
 import Plataforma_Educativa.repository.ContenidoRepository;
 import Plataforma_Educativa.repository.CursoRepository;
 import Plataforma_Educativa.repository.DocenteRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class CursoServiceImpl implements CursoService {

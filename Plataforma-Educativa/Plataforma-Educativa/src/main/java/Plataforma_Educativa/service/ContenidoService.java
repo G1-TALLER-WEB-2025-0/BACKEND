@@ -1,7 +1,6 @@
 package Plataforma_Educativa.service;
 
 import Plataforma_Educativa.model.dto.ContenidoDTO;
-import Plataforma_Educativa.model.entity.Contenido;
 import java.util.List;
 
 public interface ContenidoService {
