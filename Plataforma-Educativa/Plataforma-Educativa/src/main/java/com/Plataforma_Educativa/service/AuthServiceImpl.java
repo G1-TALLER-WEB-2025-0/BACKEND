@@ -1,20 +1,20 @@
-package Plataforma_Educativa.service;
+package com.Plataforma_Educativa.service;
 
 
 
-import Plataforma_Educativa.exception.BadRequestException;
-import Plataforma_Educativa.mapper.AuthMapper;
-import Plataforma_Educativa.model.dto.LoginRequest;
-import Plataforma_Educativa.model.dto.RoleResponse;
-import Plataforma_Educativa.model.dto.SignUpRequest;
-import Plataforma_Educativa.model.dto.UsuarioInfoResponse;
-import Plataforma_Educativa.model.entity.ERole;
-import Plataforma_Educativa.model.entity.Role;
-import Plataforma_Educativa.model.entity.Usuario;
-import Plataforma_Educativa.repository.UsuarioRepository;
-import Plataforma_Educativa.security.JwtAuthenticationResponse;
-import Plataforma_Educativa.security.JwtTokenProvider;
-import Plataforma_Educativa.security.UserPrincipal;
+import com.Plataforma_Educativa.exception.BadRequestException;
+import com.Plataforma_Educativa.mapper.AuthMapper;
+import com.Plataforma_Educativa.model.dto.LoginRequest;
+import com.Plataforma_Educativa.model.dto.RoleResponse;
+import com.Plataforma_Educativa.model.dto.SignUpRequest;
+import com.Plataforma_Educativa.model.dto.UsuarioInfoResponse;
+import com.Plataforma_Educativa.model.entity.ERole;
+import com.Plataforma_Educativa.model.entity.Role;
+import com.Plataforma_Educativa.model.entity.Usuario;
+import com.Plataforma_Educativa.repository.UsuarioRepository;
+import com.Plataforma_Educativa.security.JwtAuthenticationResponse;
+import com.Plataforma_Educativa.security.JwtTokenProvider;
+import com.Plataforma_Educativa.security.UserPrincipal;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

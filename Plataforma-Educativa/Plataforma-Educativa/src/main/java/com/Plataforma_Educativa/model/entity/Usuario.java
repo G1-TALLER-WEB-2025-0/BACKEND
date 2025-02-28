@@ -1,4 +1,4 @@
-package Plataforma_Educativa.model.entity;
+package com.Plataforma_Educativa.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;

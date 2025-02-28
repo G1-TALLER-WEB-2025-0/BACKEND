@@ -1,17 +1,17 @@
-package Plataforma_Educativa.service;
+package com.Plataforma_Educativa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Plataforma_Educativa.exception.ResourceNotFoundException;
-import Plataforma_Educativa.mapper.RoleMapper;
-import Plataforma_Educativa.model.dto.RoleResponse;
-import Plataforma_Educativa.model.entity.ERole;
-import Plataforma_Educativa.model.entity.Role;
-import Plataforma_Educativa.repository.RoleRepository;
+import com.Plataforma_Educativa.exception.ResourceNotFoundException;
+import com.Plataforma_Educativa.mapper.RoleMapper;
+import com.Plataforma_Educativa.model.dto.RoleResponse;
+import com.Plataforma_Educativa.model.entity.ERole;
+import com.Plataforma_Educativa.model.entity.Role;
+import com.Plataforma_Educativa.repository.RoleRepository;
 
 @Service
-public class RoleServiceImpl implements  RoleService{
+public class RoleServiceImpl implements RoleService{
     private final RoleRepository roleRepository;
     private final RoleMapper roleMapper;
 

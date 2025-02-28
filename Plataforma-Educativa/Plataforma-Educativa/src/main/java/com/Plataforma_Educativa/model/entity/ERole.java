@@ -1,4 +1,4 @@
-package Plataforma_Educativa.model.entity;
+package com.Plataforma_Educativa.model.entity;
 
 public enum ERole {
     ROLE_USER,

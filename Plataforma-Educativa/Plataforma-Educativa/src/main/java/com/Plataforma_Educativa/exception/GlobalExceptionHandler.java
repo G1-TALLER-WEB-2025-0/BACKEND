@@ -1,4 +1,4 @@
-package Plataforma_Educativa.exception;
+package com.Plataforma_Educativa.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import Plataforma_Educativa.model.dto.ErrorResponse;
+import com.Plataforma_Educativa.model.dto.ErrorResponse;
 
 import java.time.LocalDateTime;
 import java.util.List;

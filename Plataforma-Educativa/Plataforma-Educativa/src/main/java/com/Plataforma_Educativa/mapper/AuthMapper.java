@@ -1,14 +1,14 @@
-package Plataforma_Educativa.mapper;
+package com.Plataforma_Educativa.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
 import org.springframework.stereotype.Component;
 
-import Plataforma_Educativa.model.dto.LoginRequest;
-import Plataforma_Educativa.model.dto.SignUpRequest;
-import Plataforma_Educativa.model.dto.UsuarioInfoResponse;
-import Plataforma_Educativa.model.entity.Usuario;
-import Plataforma_Educativa.model.entity.UsuarioPerfil;
+import com.Plataforma_Educativa.model.dto.LoginRequest;
+import com.Plataforma_Educativa.model.dto.SignUpRequest;
+import com.Plataforma_Educativa.model.dto.UsuarioInfoResponse;
+import com.Plataforma_Educativa.model.entity.Usuario;
+import com.Plataforma_Educativa.model.entity.UsuarioPerfil;
 
 import java.util.List;
 import java.util.Optional;

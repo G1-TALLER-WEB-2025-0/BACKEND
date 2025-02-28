@@ -1,4 +1,4 @@
-package Plataforma_Educativa.repository;
+package com.Plataforma_Educativa.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import Plataforma_Educativa.model.entity.Usuario;
+import com.Plataforma_Educativa.model.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 

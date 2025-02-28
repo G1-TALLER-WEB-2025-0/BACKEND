@@ -1,11 +1,13 @@
-package Plataforma_Educativa.controller;
+package com.Plataforma_Educativa.controller;
 
-import Plataforma_Educativa.model.dto.CursoDTO;
-import Plataforma_Educativa.model.entity.Contenido;
-import Plataforma_Educativa.model.entity.Curso;
-import Plataforma_Educativa.service.CursoService;
+import com.Plataforma_Educativa.model.dto.CursoDTO;
+import com.Plataforma_Educativa.model.entity.Contenido;
+import com.Plataforma_Educativa.model.entity.Curso;
+import com.Plataforma_Educativa.service.CursoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/cursos")

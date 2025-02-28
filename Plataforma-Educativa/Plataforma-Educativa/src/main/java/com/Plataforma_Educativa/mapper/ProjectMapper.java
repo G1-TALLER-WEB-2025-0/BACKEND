@@ -1,7 +1,7 @@
-package Plataforma_Educativa.mapper;
+package com.Plataforma_Educativa.mapper;
 
-import Plataforma_Educativa.model.dto.CursoDTO;
-import Plataforma_Educativa.model.entity.Curso;
+import com.Plataforma_Educativa.model.dto.CursoDTO;
+import com.Plataforma_Educativa.model.entity.Curso;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

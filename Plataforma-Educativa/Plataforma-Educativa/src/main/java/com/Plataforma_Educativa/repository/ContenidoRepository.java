@@ -1,6 +1,6 @@
-package Plataforma_Educativa.repository;
+package com.Plataforma_Educativa.repository;
 
-import Plataforma_Educativa.model.entity.Contenido;
+import com.Plataforma_Educativa.model.entity.Contenido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

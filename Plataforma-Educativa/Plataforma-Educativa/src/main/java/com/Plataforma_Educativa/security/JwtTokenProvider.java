@@ -1,4 +1,4 @@
-package Plataforma_Educativa.security;
+package com.Plataforma_Educativa.security;
 
 
 import io.jsonwebtoken.*;

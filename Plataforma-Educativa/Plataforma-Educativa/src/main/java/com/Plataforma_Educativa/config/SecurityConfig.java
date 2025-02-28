@@ -1,4 +1,4 @@
- package Plataforma_Educativa.config;
+ package com.Plataforma_Educativa.config;
 
  import lombok.RequiredArgsConstructor;
  import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@
  import org.springframework.security.web.SecurityFilterChain;
  import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import Plataforma_Educativa.security.JwtAuthenticationFilter;
+import com.Plataforma_Educativa.security.JwtAuthenticationFilter;
  
  @Configuration
  @EnableWebSecurity

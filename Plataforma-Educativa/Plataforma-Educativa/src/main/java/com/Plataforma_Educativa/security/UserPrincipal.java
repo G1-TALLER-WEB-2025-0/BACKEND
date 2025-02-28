@@ -1,4 +1,4 @@
-package Plataforma_Educativa.security;
+package com.Plataforma_Educativa.security;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import Plataforma_Educativa.model.entity.Usuario;
-import Plataforma_Educativa.model.entity.UsuarioPerfil;
+import com.Plataforma_Educativa.model.entity.Usuario;
+import com.Plataforma_Educativa.model.entity.UsuarioPerfil;
 
 import java.util.Collection;
 import java.util.List;

@@ -1,8 +1,9 @@
-package Plataforma_Educativa.service;
+package com.Plataforma_Educativa.service;
 
-import Plataforma_Educativa.model.dto.CursoDTO;
-import Plataforma_Educativa.model.entity.Contenido;
-import Plataforma_Educativa.model.entity.Curso;
+import com.Plataforma_Educativa.model.dto.CursoDTO;
+import com.Plataforma_Educativa.model.entity.Contenido;
+import com.Plataforma_Educativa.model.entity.Curso;
+import java.util.List;
 
 public interface CursoService {
     Curso crearCurso(CursoDTO cursoDTO);

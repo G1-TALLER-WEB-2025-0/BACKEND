@@ -1,4 +1,4 @@
-package Plataforma_Educativa.security;
+package com.Plataforma_Educativa.security;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import Plataforma_Educativa.model.entity.Usuario;
-import Plataforma_Educativa.repository.UsuarioRepository;
+import com.Plataforma_Educativa.model.entity.Usuario;
+import com.Plataforma_Educativa.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 
 @Service

@@ -1,4 +1,4 @@
-package Plataforma_Educativa.security;
+package com.Plataforma_Educativa.security;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

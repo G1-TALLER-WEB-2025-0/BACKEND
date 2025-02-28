@@ -1,15 +1,15 @@
-package Plataforma_Educativa.controller;
+package com.Plataforma_Educativa.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import Plataforma_Educativa.model.dto.LoginRequest;
-import Plataforma_Educativa.model.dto.SignUpRequest;
-import Plataforma_Educativa.model.dto.UsuarioInfoResponse;
-import Plataforma_Educativa.security.JwtAuthenticationResponse;
-import Plataforma_Educativa.service.AuthService;
+import com.Plataforma_Educativa.model.dto.LoginRequest;
+import com.Plataforma_Educativa.model.dto.SignUpRequest;
+import com.Plataforma_Educativa.model.dto.UsuarioInfoResponse;
+import com.Plataforma_Educativa.security.JwtAuthenticationResponse;
+import com.Plataforma_Educativa.service.AuthService;
 
 @RestController
 @RequestMapping("/auth")

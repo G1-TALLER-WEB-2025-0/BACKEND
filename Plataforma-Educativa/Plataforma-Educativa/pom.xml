@@ -8,7 +8,7 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.Plataforma_Educativa</groupId>
 	<artifactId>Plataforma-Educativa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Plataforma-Educativa</name>

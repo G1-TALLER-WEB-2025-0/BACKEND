@@ -1,4 +1,4 @@
-package Plataforma_Educativa.model.entity;
+package com.Plataforma_Educativa.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,4 +1,4 @@
-package Plataforma_Educativa.config;
+package com.Plataforma_Educativa.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

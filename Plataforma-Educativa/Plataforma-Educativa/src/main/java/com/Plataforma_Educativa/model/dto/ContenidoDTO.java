@@ -1,4 +1,4 @@
-package Plataforma_Educativa.model.dto;
+package com.Plataforma_Educativa.model.dto;
 
 import lombok.*;
 

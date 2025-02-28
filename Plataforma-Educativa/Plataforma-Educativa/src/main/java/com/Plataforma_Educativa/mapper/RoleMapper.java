@@ -1,11 +1,11 @@
-package Plataforma_Educativa.mapper;
+package com.Plataforma_Educativa.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import Plataforma_Educativa.model.dto.RoleRequest;
-import Plataforma_Educativa.model.dto.RoleResponse;
-import Plataforma_Educativa.model.entity.Role;
+import com.Plataforma_Educativa.model.dto.RoleRequest;
+import com.Plataforma_Educativa.model.dto.RoleResponse;
+import com.Plataforma_Educativa.model.entity.Role;
 
 @Component
 public class RoleMapper {
