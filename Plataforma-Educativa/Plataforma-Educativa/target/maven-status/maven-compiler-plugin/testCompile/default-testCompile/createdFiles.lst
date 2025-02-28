@@ -1,0 +1,9 @@
+com\Plataforma_Educativa\services\GradeServiceTest.class
+com\Plataforma_Educativa\services\MaterialServiceTest.class
+com\Plataforma_Educativa\controller\ContenidoControllerTest.class
+com\Plataforma_Educativa\PlataformaEducativaApplicationTests.class
+com\Plataforma_Educativa\service\ContenidoServiceImplTest.class
+com\Plataforma_Educativa\services\VideoServiceTest.class
+com\Plataforma_Educativa\services\HistoryServiceTest.class
+com\Plataforma_Educativa\controller\CursoControllerTest.class
+com\Plataforma_Educativa\service\CursoServiceImplTest.class
