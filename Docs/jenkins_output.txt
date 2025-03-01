@@ -1,0 +1,396 @@
+Started by user admin
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\angel\.jenkins\workspace\SGE
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Users\angel\.jenkins\workspace\SGE\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/G1-TALLER-WEB-2025-0/BACKEND # timeout=10
+Fetching upstream changes from https://github.com/G1-TALLER-WEB-2025-0/BACKEND
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.45.2.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/G1-TALLER-WEB-2025-0/BACKEND +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/merge_spopovich.feature^{commit}" # timeout=10
+Checking out Revision c9e552db74a21890f117a0ffe7a747369f2ae421 (refs/remotes/origin/merge_spopovich.feature)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f c9e552db74a21890f117a0ffe7a747369f2ae421 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D merge_spopovich.feature # timeout=10
+ > git.exe checkout -b merge_spopovich.feature c9e552db74a21890f117a0ffe7a747369f2ae421 # timeout=10
+Commit message: "docs"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build with Maven)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\angel\.jenkins\workspace\SGE>mvn -f Plataforma-Educativa/Plataforma-Educativa clean compile -Dcheckstyle.skip=true 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.Plataforma_Educativa:Plataforma-Educativa >------------
+[INFO] Building Plataforma-Educativa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ Plataforma-Educativa ---
+[INFO] Deleting C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Plataforma-Educativa ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ Plataforma-Educativa ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 52 source files with javac [debug parameters release 21] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.656 s
+[INFO] Finished at: 2025-02-24T17:31:45-05:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run Unit Tests)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\angel\.jenkins\workspace\SGE>mvn -f Plataforma-Educativa/Plataforma-Educativa test -Dcheckstyle.skip=true 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.Plataforma_Educativa:Plataforma-Educativa >------------
+[INFO] Building Plataforma-Educativa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Plataforma-Educativa ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ Plataforma-Educativa ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ Plataforma-Educativa ---
+[INFO] skip non existing resourceDirectory C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ Plataforma-Educativa ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 9 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ Plataforma-Educativa ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.Plataforma_Educativa.controller.ContenidoControllerTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\angel\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.11\byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.455 s -- in com.Plataforma_Educativa.controller.ContenidoControllerTest
+[INFO] Running com.Plataforma_Educativa.controller.CursoControllerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in com.Plataforma_Educativa.controller.CursoControllerTest
+[INFO] Running com.Plataforma_Educativa.PlataformaEducativaApplicationTests
+17:31:54.013 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.Plataforma_Educativa.PlataformaEducativaApplicationTests]: PlataformaEducativaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:31:54.132 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.Plataforma_Educativa.PlataformaEducativaApplication for test class com.Plataforma_Educativa.PlataformaEducativaApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2025-02-24T17:31:54.577-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] c.P.PlataformaEducativaApplicationTests  : Starting PlataformaEducativaApplicationTests using Java 21.0.5 with PID 132200 (started by angel in C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa)
+2025-02-24T17:31:54.580-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] c.P.PlataformaEducativaApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-02-24T17:31:55.616-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24T17:31:55.720-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 10 JPA repository interfaces.
+2025-02-24T17:31:56.503-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24T17:31:56.581-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-24T17:31:56.614-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-24T17:31:56.746-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24T17:31:56.774-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-24T17:31:59.092-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72641613
+2025-02-24T17:31:59.097-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-24T17:31:59.373-05:00  WARN 132200 --- [Plataforma-Educativa] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-24T17:31:59.374-05:00  WARN 132200 --- [Plataforma-Educativa] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-24T17:31:59.388-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24T17:32:01.101-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24T17:32:05.756-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24T17:32:07.701-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-24T17:32:09.687-05:00  WARN 132200 --- [Plataforma-Educativa] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24T17:32:11.958-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-02-24T17:32:12.162-05:00  INFO 132200 --- [Plataforma-Educativa] [           main] c.P.PlataformaEducativaApplicationTests  : Started PlataformaEducativaApplicationTests in 17.867 seconds (process running for 20.585)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.64 s -- in com.Plataforma_Educativa.PlataformaEducativaApplicationTests
+[INFO] Running com.Plataforma_Educativa.service.ContenidoServiceImplTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.407 s -- in com.Plataforma_Educativa.service.ContenidoServiceImplTest
+[INFO] Running com.Plataforma_Educativa.service.CursoServiceImplTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s -- in com.Plataforma_Educativa.service.CursoServiceImplTest
+[INFO] Running com.Plataforma_Educativa.services.GradeServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 s -- in com.Plataforma_Educativa.services.GradeServiceTest
+[INFO] Running com.Plataforma_Educativa.services.HistoryServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in com.Plataforma_Educativa.services.HistoryServiceTest
+[INFO] Running com.Plataforma_Educativa.services.MaterialServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.154 s -- in com.Plataforma_Educativa.services.MaterialServiceTest
+[INFO] Running com.Plataforma_Educativa.services.VideoServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s -- in com.Plataforma_Educativa.services.VideoServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 51, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.796 s
+[INFO] Finished at: 2025-02-24T17:32:14-05:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (SonarQube Analysis)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\angel\.jenkins\workspace\SGE>mvn -f Plataforma-Educativa/Plataforma-Educativa/pom.xml clean verify sonar:sonar               -Dsonar.projectKey=epd               -Dsonar.projectName=EPD               -Dsonar.host.url=http://localhost:9000               -Dsonar.sources=src/main/java/com/Plataforma_Educativa               -Dsonar.tests=src/test/java/com/Plataforma_Educativa               -Dsonar.exclusions=**/test/**               -Dsonar.token=squ_7c9288b902d76f3e86af03ac7a208ee03116db30               -DskipTests 
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 1.4/21 kBProgress (2): 1.4/21 kB | 1.4/14 kBProgress (2): 2.8/21 kB | 1.4/14 kBProgress (2): 2.8/21 kB | 2.8/14 kBProgress (2): 4.1/21 kB | 2.8/14 kBProgress (2): 5.5/21 kB | 2.8/14 kBProgress (2): 5.5/21 kB | 4.1/14 kBProgress (2): 6.9/21 kB | 4.1/14 kBProgress (2): 6.9/21 kB | 5.5/14 kBProgress (2): 8.3/21 kB | 5.5/14 kBProgress (2): 8.3/21 kB | 6.9/14 kBProgress (2): 9.7/21 kB | 6.9/14 kBProgress (2): 9.7/21 kB | 8.3/14 kBProgress (2): 11/21 kB | 8.3/14 kB Progress (2): 11/21 kB | 9.7/14 kBProgress (2): 12/21 kB | 9.7/14 kBProgress (2): 12/21 kB | 11/14 kB Progress (2): 14/21 kB | 11/14 kBProgress (2): 15/21 kB | 11/14 kBProgress (2): 15/21 kB | 12/14 kBProgress (2): 17/21 kB | 12/14 kBProgress (2): 17/21 kB | 14/14 kBProgress (2): 17/21 kB | 14 kB   Progress (2): 18/21 kB | 14 kBProgress (2): 19/21 kB | 14 kBProgress (2): 21 kB | 14 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 66 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 45 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/maven-metadata.xml
+Progress (1): 1.4 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/sonar-maven-plugin/maven-metadata.xml (1.4 kB at 86 kB/s)
+[WARNING] The artifact org.codehaus.mojo:sonar-maven-plugin:jar:4.0.0.4121 has been relocated to org.sonarsource.scanner.maven:sonar-maven-plugin:jar:4.0.0.4121: SonarQube plugin was moved to SonarSource organisation
+[INFO] 
+[INFO] -----------< com.Plataforma_Educativa:Plataforma-Educativa >------------
+[INFO] Building Plataforma-Educativa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.0:clean (default-clean) @ Plataforma-Educativa ---
+[INFO] Deleting C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Plataforma-Educativa ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ Plataforma-Educativa ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 52 source files with javac [debug parameters release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ Plataforma-Educativa ---
+[INFO] skip non existing resourceDirectory C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ Plataforma-Educativa ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 9 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ Plataforma-Educativa ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ Plataforma-Educativa ---
+[INFO] Building jar: C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target\Plataforma-Educativa-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.4.2:repackage (repackage) @ Plataforma-Educativa ---
+[INFO] Replacing main artifact C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target\Plataforma-Educativa-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target\Plataforma-Educativa-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] -----------< com.Plataforma_Educativa:Plataforma-Educativa >------------
+[INFO] Building Plataforma-Educativa 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- sonar:4.0.0.4121:sonar (default-cli) @ Plataforma-Educativa ---
+[WARNING] 17:32:34.904 Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121'.
+[INFO] 17:32:34.913 Java 21.0.5 Oracle Corporation (64-bit)
+[INFO] 17:32:34.914 Windows 11 10.0 (amd64)
+[INFO] 17:32:34.974 User cache: C:\Users\angel\.sonar\cache
+[INFO] 17:32:35.106 Communicating with SonarQube Server 25.2.0.102705
+[INFO] 17:32:35.137 Default locale: "en_US", source code encoding: "UTF-8"
+[INFO] 17:32:36.811 Load global settings
+[INFO] 17:32:36.955 Load global settings (done) | time=146ms
+[INFO] 17:32:37.050 Server id: 147B411E-AZUm8VBJaEdUPFn7P-KP
+[INFO] 17:32:37.084 Loading required plugins
+[INFO] 17:32:37.084 Load plugins index
+[INFO] 17:32:37.151 Load plugins index (done) | time=67ms
+[INFO] 17:32:37.152 Load/download plugins
+[INFO] 17:32:37.254 Load/download plugins (done) | time=102ms
+[INFO] 17:32:37.879 Process project properties
+[INFO] 17:32:37.915 Process project properties (done) | time=36ms
+[INFO] 17:32:37.933 Project key: epd
+[INFO] 17:32:37.934 Base dir: C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa
+[INFO] 17:32:37.934 Working dir: C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target\sonar
+[INFO] 17:32:37.948 Load project settings for component key: 'epd'
+[INFO] 17:32:37.980 Load project settings for component key: 'epd' (done) | time=32ms
+[INFO] 17:32:38.025 Load quality profiles
+[INFO] 17:32:38.399 Load quality profiles (done) | time=374ms
+[INFO] 17:32:38.440 Auto-configuring with CI 'Jenkins'
+[INFO] 17:32:38.550 Load active rules
+[INFO] 17:32:39.642 Load active rules (done) | time=1091ms
+[INFO] 17:32:39.654 Load analysis cache
+[INFO] 17:32:39.704 Load analysis cache (2.5 kB) | time=50ms
+[INFO] 17:32:39.811 Preprocessing files...
+[INFO] 17:32:40.464 1 language detected in 61 preprocessed files
+[INFO] 17:32:40.465 0 files ignored because of inclusion/exclusion patterns
+[INFO] 17:32:40.465 0 files ignored because of scm ignore settings
+[INFO] 17:32:40.472 Loading plugins for detected languages
+[INFO] 17:32:40.473 Load/download plugins
+[INFO] 17:32:40.517 Load/download plugins (done) | time=44ms
+[INFO] 17:32:40.844 Load project repositories
+[INFO] 17:32:41.154 Load project repositories (done) | time=310ms
+[INFO] 17:32:41.190 Indexing files...
+[INFO] 17:32:41.190 Project configuration:
+[INFO] 17:32:41.190   Excluded sources: **/test/**
+[INFO] 17:32:41.222 61 files indexed
+[INFO] 17:32:41.224 Quality profile for java: Sonar way
+[INFO] 17:32:41.225 ------------- Run sensors on module EPD
+[INFO] 17:32:41.490 Load metrics repository
+[INFO] 17:32:41.531 Load metrics repository (done) | time=41ms
+[INFO] 17:32:43.244 Sensor JavaSensor [java]
+[INFO] 17:32:43.264 Configured Java source version (sonar.java.source): 21, preview features enabled (sonar.java.enablePreview): false
+[INFO] 17:32:43.369 Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+[INFO] 17:32:43.372 Using ECJ batch to parse 52 Main java source files with batch size 425 KB.
+[INFO] 17:32:44.192 Starting batch processing.
+[INFO] 17:32:45.032 The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+[INFO] 17:32:48.430 100% analyzed
+[INFO] 17:32:48.430 Batch processing: Done.
+[INFO] 17:32:48.432 Did not optimize analysis for any files, performed a full analysis for all 52 files.
+[INFO] 17:32:48.434 Using ECJ batch to parse 9 Test java source files with batch size 425 KB.
+[INFO] 17:32:48.458 Starting batch processing.
+[INFO] 17:32:49.719 100% analyzed
+[INFO] 17:32:49.719 Batch processing: Done.
+[INFO] 17:32:49.722 Did not optimize analysis for any files, performed a full analysis for all 9 files.
+[INFO] 17:32:49.722 No "Generated" source files to scan.
+[INFO] 17:32:49.723 Sensor JavaSensor [java] (done) | time=6501ms
+[INFO] 17:32:49.724 Sensor JaCoCo XML Report Importer [jacoco]
+[INFO] 17:32:49.725 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+[INFO] 17:32:49.726 No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+[INFO] 17:32:49.726 Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+[INFO] 17:32:49.726 Sensor Java Config Sensor [iac]
+[INFO] 17:32:49.760 0 source files to be analyzed
+[INFO] 17:32:49.766 0/0 source files have been analyzed
+[INFO] 17:32:49.769 Sensor Java Config Sensor [iac] (done) | time=43ms
+[INFO] 17:32:49.769 Sensor SurefireSensor [java]
+[INFO] 17:32:49.770 parsing [C:\Users\angel\.jenkins\workspace\SGE\Plataforma-Educativa\Plataforma-Educativa\target\surefire-reports]
+[INFO] 17:32:49.771 Sensor SurefireSensor [java] (done) | time=2ms
+[INFO] 17:32:49.771 Sensor IaC Docker Sensor [iac]
+[INFO] 17:32:49.929 0 source files to be analyzed
+[INFO] 17:32:49.929 0/0 source files have been analyzed
+[INFO] 17:32:49.930 Sensor IaC Docker Sensor [iac] (done) | time=159ms
+[INFO] 17:32:49.930 Sensor TextAndSecretsSensor [text]
+[INFO] 17:32:49.930 Available processors: 16
+[INFO] 17:32:49.930 Using 16 threads for analysis.
+[INFO] 17:32:50.869 Using git CLI to retrieve untracked files
+[INFO] 17:32:50.960 Analyzing language associated files and files included via "sonar.text.inclusions" that are tracked by git
+[INFO] 17:32:51.001 61 source files to be analyzed
+[INFO] 17:32:51.154 61/61 source files have been analyzed
+[INFO] 17:32:51.155 Sensor TextAndSecretsSensor [text] (done) | time=1225ms
+[INFO] 17:32:51.178 ------------- Run sensors on project
+[INFO] 17:32:51.459 Sensor Zero Coverage Sensor
+[INFO] 17:32:51.499 Sensor Zero Coverage Sensor (done) | time=39ms
+[INFO] 17:32:51.501 Sensor Java CPD Block Indexer
+[INFO] 17:32:51.594 Sensor Java CPD Block Indexer (done) | time=93ms
+[INFO] 17:32:51.706 SCM Publisher SCM provider for this project is: git
+[INFO] 17:32:51.707 SCM Publisher 9 source files to be analyzed
+[INFO] 17:32:52.414 SCM Publisher 9/9 source files have been analyzed (done) | time=706ms
+[INFO] 17:32:52.420 CPD Executor 24 files had no CPD blocks
+[INFO] 17:32:52.420 CPD Executor Calculating CPD for 28 files
+[INFO] 17:32:52.452 CPD Executor CPD calculation finished (done) | time=30ms
+[INFO] 17:32:52.464 SCM revision ID 'c9e552db74a21890f117a0ffe7a747369f2ae421'
+[INFO] 17:32:52.767 Analysis report generated in 250ms, dir size=384.3 kB
+[INFO] 17:32:53.183 Analysis report compressed in 415ms, zip size=156.8 kB
+[INFO] 17:32:53.245 Analysis report uploaded in 62ms
+[INFO] 17:32:53.269 ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=epd
+[INFO] 17:32:53.270 Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO] 17:32:53.270 More about the report processing at http://localhost:9000/api/ce/task?id=bcbbe9c6-8806-4d08-aaa8-2bc7a7e6c40f
+[INFO] 17:32:53.524 Analysis total time: 16.200 s
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  36.691 s
+[INFO] Finished at: 2025-02-24T17:32:53-05:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy )
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+Maven deploy skipped
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
